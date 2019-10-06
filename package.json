@@ -1,0 +1,36 @@
+{
+  "name": "abap2famix",
+  "version": "1.0.0",
+  "description": "This project offers the mechanism for producing MSE files that can be loaded in moosetechnology.org out of ABAP-OO code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pascalerni/abap2famix.git"
+  },
+  "author": "Pascal Erni",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/pascalerni/abap2famix/issues"
+  },
+  "homepage": "https://github.com/pascalerni/abap2famix#readme",
+  "devDependencies": {
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3",
+    "@types/glob": "^7.1.1"
+  },
+  "dependencies": {
+    "abaplint": "^2.1.6",
+    "famix": "^1.0.2",
+    "glob": "^7.1.4"
+  }
+}
