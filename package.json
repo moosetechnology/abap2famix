@@ -1,8 +1,9 @@
 {
   "name": "abap2famix",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This project offers the mechanism for producing MSE files that can be loaded in moosetechnology.org out of ABAP-OO code.",
-  "main": "index.js",
+  "main": "build/cli.js",
+  "typings": "build/cli.d.ts",
   "files": ["build/**/*", "abap2famix"],
   "bin": {
     "abap2famix": "./abap2famix"
