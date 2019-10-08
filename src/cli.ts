@@ -4,6 +4,7 @@ import * as glob from "glob";
 import * as fs from "fs";
 import {IFile} from "abaplint/build/src/files/_ifile";
 import {Moose} from "./moose";
+import * as path from "path";
 
 function run() {
 
@@ -24,7 +25,8 @@ function run() {
 
     console.log("analyzing abap files...");
     reg.addFiles(files);
-    const outfile = "./" + process.cwd().substring(process.cwd().lastIndexOf("/") + 1) +".mse";
+
+    const outfile = process.cwd() + path.sep + process.cwd().substring(process.cwd().lastIndexOf(path.sep) + 1) +".mse";
     fs.writeFileSync(outfile, new Moose(reg).getMSE(), "utf-8");
 
     console.log(outfile + " created.");
